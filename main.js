@@ -324,6 +324,7 @@ const getMainKeyboard = () => ({
       [
         { text: '⏰ Runtime', callback_data: 'runtime' },
         { text: '📖 Guide', callback_data: 'help' },
+      ]
     ],
   },
 });
