@@ -4,7 +4,7 @@ async function tiktok_photo(bot, msg, data) {
   const From = msg.chat.id;
   const { title, title_audio, video, audio } = data;
 
-  const caption = `Title: ${title}`;
+  const caption = `Title: ${title}\nAudio: ${title_audio}`;
 
   try {
     const media = video.map((url, index) => ({
@@ -18,14 +18,14 @@ async function tiktok_photo(bot, msg, data) {
     await bot.sendAudio(From, audio[0], {
       caption: `Audio: ${title_audio}`,
       reply_markup: {
-        inline_keyboard: [[{ text: 'URL Audio', url: audio[0] }]]
+        inline_keyboard: [[{ text: '🎵 URL Audio', url: audio[0] }]]
       }
     });
     await sleep(3000);
 
-    await bot.sendMessage(From, 'Powered by @kxshibe1', {
+    await bot.sendMessage(From, 'Powered by @wtffry', {
       reply_markup: {
-        inline_keyboard: [[{ text: 'Support', url: 'https://t.me/@kxshibe1' }]]
+        inline_keyboard: [[{ text: '👨‍💻 Support', url: 'https://t.me/wtffry' }]]
       }
     });
   } catch (error) {

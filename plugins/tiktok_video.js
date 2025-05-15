@@ -4,13 +4,13 @@ async function tiktok_video(bot, msg, data) {
   const From = msg.chat.id;
   const { title, title_audio, thumbnail, video, audio } = data;
 
-  const caption = `Title: ${title}`;
+  const caption = `Title: ${title}\nAudio: ${title_audio}`;
 
   try {
     await bot.sendVideo(From, video[0], {
       caption,
       reply_markup: {
-        inline_keyboard: [[{ text: 'URL Video', url: video[0] }]]
+        inline_keyboard: [[{ text: '🎥 URL Video', url: video[0] }]]
       }
     });
     await sleep(3000);
@@ -18,14 +18,14 @@ async function tiktok_video(bot, msg, data) {
     await bot.sendAudio(From, audio[0], {
       caption: `Audio: ${title_audio}`,
       reply_markup: {
-        inline_keyboard: [[{ text: 'URL Audio', url: audio[0] }]]
+        inline_keyboard: [[{ text: '🎵 URL Audio', url: audio[0] }]]
       }
     });
     await sleep(3000);
 
-    await bot.sendMessage(From, 'Powered by @1void', {
+    await bot.sendMessage(From, 'Powered by @wtffry', {
       reply_markup: {
-        inline_keyboard: [[{ text: 'Support', url: 'https://t.me/@v6idd' }]]
+        inline_keyboard: [[{ text: '👨‍💻 Support', url: 'https://t.me/wtffry' }]]
       }
     });
   } catch (error) {
