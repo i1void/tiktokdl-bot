@@ -67,7 +67,7 @@ const getMessage = (lang, type) => {
       start: `
 Selamat datang di *TikTok Downloader Bot* ‹𝟹
 Saya akan membantu Anda mengunduh video, audio, atau foto TikTok tanpa watermark. Kirim **Hanya** tautan TikTok yang valid, seperti:
-https://vt.tiktok.com/ZShxDd3sL/
+https://vt.tiktok.com/ZShcAFh81/
 Jangan tambahkan teks lain sebelum atau sesudah tautan.
 
 〉*Cara Mendapatkan Tautan*:
