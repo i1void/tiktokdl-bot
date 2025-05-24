@@ -25,7 +25,7 @@ async function tiktok_video(bot, msg, data) {
 
     await bot.sendMessage(From, 'Powered by @1void', {
       reply_markup: {
-        inline_keyboard: [[{ text: 'Support', url: 'https://t.me/kxshibe1' }]]
+        inline_keyboard: [[{ text: 'Support', url: 'https://i.ibb.co/39WWrhwC/f827d96e3e10.png' }]]
       }
     });
   } catch (error) {
