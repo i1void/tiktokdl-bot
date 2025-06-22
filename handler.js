@@ -1,5 +1,5 @@
-const { ttdl } = require('btch-downloader');
-const tiktok_video  = require('./plugins/tiktok_video');
+const axios = require('axios');
+const tiktok_video = require('./plugins/tiktok_video');
 const tiktok_photo = require('./plugins/tiktok_photo');
 
 async function handler(bot, msg) {
@@ -9,13 +9,23 @@ async function handler(bot, msg) {
   if (body.test(msg.text)) {
     const url = msg.text;
     try {
-      const data = await ttdl(url);
-      const isPhoto = data.video[0].includes('tplv-photomode') || data.video[0].endsWith('.jpeg') || data.video[0].endsWith('.jpg');
+      // Menggunakan REST API
+      const response = await axios.get(`https://api.iherta.my.id/downloader/tiktok?url=${encodeURIComponent(url)}`);
+      const data = response.data;
+
+      if (!data.status) {
+        throw new Error('API returned false status');
+      }
+
+      const result = data.result;
+      
+      // Cek apakah ini foto/image atau video
+      const isPhoto = result.type === 'image';
 
       if (isPhoto) {
-        await tiktok_photo(bot, msg, data);
+        await tiktok_photo(bot, msg, result);
       } else {
-        await tiktok_video(bot, msg, data);
+        await tiktok_video(bot, msg, result);
       }
     } catch (error) {
       await bot.sendMessage(From, 'Sorry, an error occurred while downloading the TikTok content.');
@@ -24,4 +34,4 @@ async function handler(bot, msg) {
   }
 }
 
-module.exports = handler
+module.exports = handler;
