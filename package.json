@@ -1,5 +1,5 @@
 {
-  "name": "tiktokdl-tele",
+  "name": "tiktokdl-bot",
   "version": "0.0.1",
   "description": "Tiktok Downloader Telegram Bot",
   "main": "index.js",
@@ -13,7 +13,7 @@
     "node": "18.x"
   },
   "dependencies": {
-    "btch-downloader": "*",
+    "axios": "^1.6.0",
     "chalk": "^4.1.1",
     "express": "^4.18.2",
     "node-telegram-bot-api": "^0.61.0"
