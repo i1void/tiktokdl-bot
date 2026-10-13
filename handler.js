@@ -10,7 +10,7 @@ async function handler(bot, msg) {
     const url = msg.text;
     try {
       // Menggunakan REST API
-      const response = await axios.get(`https://api.iherta.my.id/downloader/tiktok?url=${encodeURIComponent(url)}`);
+      const response = await axios.get(`https://api.i1void.is-a.dev/downloader/tiktok?url=${encodeURIComponent(url)}`);
       const data = response.data;
 
       if (!data.status) {
